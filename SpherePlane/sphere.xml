@@ -1,0 +1,32 @@
+<mujoco>
+
+    <option integrator = "RK4" timestep = "0.00001"
+            jacobian = "dense" cone = "elliptic"
+            solver = "Newton" tolerance="1e-15"
+            noslip_iterations="0" noslip_tolerance="1e-6" >
+        <flag energy="enable" fwdinv="enable" />
+    </option>
+
+	  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.1 0.1 0.1" specular="0 0 0"/>
+    <global azimuth="120" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <!-- <mesh name="Box_Part" file="Box.STL"/> -->
+        <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="512" height="512"/>
+        <texture name="grid" type="2d" builtin="checker" width="512" height="512" rgb1=".1 .2 .3" rgb2=".2 .3 .4"/>
+        <material name="grid" texture="grid" texrepeat="1 1" texuniform="true" reflectance=".2"/>
+  </asset>
+
+	<worldbody>
+		<!-- <geom name="terrain-plane" type="plane" material="grid" pos="0 0 -0.0" size="0.5 0.5 0.01" contype="1" conaffinity="1" solref="-0.02 -1" solimp="0.0 0.95 0.02 0.5 2" priority="1"/> -->
+<!--<geom name="terrain-box" pos="-0.1 0.1 -0.1" euler="90 0 0" type="mesh" mesh="Box_Part" rgba="0 0 1 1" solref="-1 -1" solimp="0.0 0.95 0.02 0.5 2" priority="1"/>-->
+<!--        <geom name="floor1-box" pos = "0 0 -0.25" size="0.5 0.5 .25" type="box" priority="1" />-->
+   <geom name="def-plane" type="plane" material="grid" pos="0 0 -0.0" size="0.5 0.5 0.01" contype="1" conaffinity="1" priority="1"/>
+		<body name ="com" pos="0 0 0.02" euler="0 0 0">
+			<joint type="free"/>
+			<geom type="sphere" pos="0 0 -0.0" mass="1" size="0.01"  contype="1" conaffinity="1" rgba="1 0 0 1"/>
+		</body>
+	</worldbody>
+</mujoco>
