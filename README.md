@@ -1,7 +1,10 @@
 # ContactDyn
 Source code of some examples of contact dynamics 
 ## MuJoCo LQR tutorial
-![MjHumanoid](LQR/MjLQRwithContact.gif)
+<p align="center">
+  <img src="LQR/MjLQRwithContact.gif" width="70%" align="center" />
+</p>
+
 ## Sphere Plane Collision
 ### Default solver parameters
 <p align="center">
@@ -14,5 +17,6 @@ Source code of some examples of contact dynamics
 
 ### Modified solver parameters
 <p align="center">
-  <img src="SpherePlane/MjSphere.png" width="45%" />
+  <img src="SpherePlane/MjSphere.png" width="45%" align="center"/>
+  <img src="SpherePlane/MjBallonDefPlane.gif" width="45%" align="center" />
 </p>
